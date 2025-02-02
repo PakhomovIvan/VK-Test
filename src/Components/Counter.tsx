@@ -1,7 +1,20 @@
-import { CounterValue } from './CounterParams'
+import { CounterProps } from './CounterProps'
 
-const Counter = ({ countValue }: CounterValue) => {
-  return <>{countValue && <span>{countValue}</span>}</>
+const Counter = ({ styleParam, size, quantity }: CounterProps) => {
+  return (
+    <>
+      {quantity && (
+        <span
+          style={{
+            background: `var(--${styleParam})`,
+            fontSize: `${size}px`,
+          }}
+        >
+          {quantity}
+        </span>
+      )}
+    </>
+  )
 }
 
 export default Counter

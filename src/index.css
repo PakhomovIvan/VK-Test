@@ -5,7 +5,8 @@
 }
 
 :root {
-  --primary-background: #ff7700;
+  --primary: #ff7700;
+  --secondary: #8366561f;
   --text-color: #ffffff;
   --counter-background: #ffffff1f;
   --static-surface-base-inverse-primary: url('/gradient.png');
@@ -23,4 +24,9 @@ body,
 p {
   margin: 0;
   color: var(--text-color);
+  white-space: nowrap;
+}
+
+body {
+  background-color: #353535bb;
 }
