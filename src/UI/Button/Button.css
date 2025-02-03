@@ -38,11 +38,21 @@ span {
 }
 
 .spinner {
+  position: absolute;
+  top: auto;
+  right: auto;
   animation: rotate 1s linear infinite;
 }
 
+.btn-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
 .hide {
-  opacity: 0;
+  animation: hide 1s;
 }
 
 @keyframes rotate {
@@ -54,5 +64,14 @@ span {
 @keyframes shimmer {
   from {
     transform: rotate(-360deg);
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

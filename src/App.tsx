@@ -5,11 +5,11 @@ function App() {
   return (
     <div className="wrapper">
       <Button
-        style="primary"
+        styleParam="primary"
         size={56}
         state="enabled"
         focused={false}
-        label={'Что сделать'}
+        label={'Увеличить счётчик'}
       />
     </div>
   )

@@ -6,7 +6,8 @@ const Counter = ({ styleParam, size, quantity }: CounterProps) => {
       {quantity && (
         <span
           style={{
-            background: `var(--${styleParam})`,
+            background: `var(--${styleParam}-transparent)`,
+            color: `var(--${styleParam}-text-color)`,
             fontSize: `${size}px`,
           }}
         >

@@ -4,7 +4,7 @@ import ProgressIndicator from '../ProgressIndicator/ProgressIndicator'
 import { ButtonProps } from './ButtonProps'
 import './Button.css'
 
-const Button = ({ style, size, label }: ButtonProps) => {
+const Button = ({ styleParam, size, label }: ButtonProps) => {
   const [quantityValue, setQuantityValue] = useState<string | number | null>(
     null
   )
@@ -26,16 +26,25 @@ const Button = ({ style, size, label }: ButtonProps) => {
     <div
       className="button"
       onClick={handleClickButton}
-      style={{ background: `var(--${style})`, height: `${size}px` }}
+      style={{ background: `var(--${styleParam})`, height: `${size}px` }}
     >
       {isLoading ? (
-        <ProgressIndicator />
-      ) : (
         <>
-          {' '}
-          <p>{label}</p>
-          <Counter styleParam="primary" size={12} quantity={quantityValue} />
+          <ProgressIndicator styleParam={styleParam} />
+          <div className="btn-block hide">
+            <p style={{ color: `var(--${styleParam}-text-color)` }}>{label}</p>
+            <Counter
+              styleParam={styleParam}
+              size={16}
+              quantity={quantityValue}
+            />
+          </div>
         </>
+      ) : (
+        <div className="btn-block">
+          <p style={{ color: `var(--${styleParam}-text-color)` }}>{label}</p>
+          <Counter styleParam={styleParam} size={16} quantity={quantityValue} />
+        </div>
       )}
     </div>
   )
